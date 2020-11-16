@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1050</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1050</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>USRP GUI v.0.2</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1000</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1000</width>
+      <height>800</height>
+     </size>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="TabReceiver">
+     <attribute name="title">
+      <string>Receive samples to file</string>
+     </attribute>
+     <widget class="QLineEdit" name="ChannelEdit">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>360</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ChannelLabel">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>370</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Channel:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="MakeRecordButton">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>740</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Make record</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="UsrpTypeGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>961</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select USRP type:</string>
+      </property>
+      <widget class="QRadioButton" name="Usrp2RB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>usrp2(2930)</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="UsrpB210RB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>b210(2901)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="BandwidthLabel">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>370</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Signal bandwidth, Hz:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SetupTimeLabel">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>410</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Setup time, seconds:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="BandwidthEdit">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2500000</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="GainLabel">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>410</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Gain, dB:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SanpleRateLabel">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>410</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sample rate, Hz:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="IpLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter IP:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SampleRateEdit">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>400</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>5000000</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="WireFormatGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>961</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select wire format:</string>
+      </property>
+      <widget class="QRadioButton" name="Sc8RB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>complex 8 bit</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Sc16RB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>complex 16 bit</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="ExitButton">
+      <property name="geometry">
+       <rect>
+        <x>880</x>
+        <y>740</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="GainEdit">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>400</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>38</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="SyncSourceGroup">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>500</y>
+        <width>951</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select synchronization reference source:</string>
+      </property>
+      <widget class="QRadioButton" name="InternalRB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>internal</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ExternalRB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>external</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="MimoRB">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MIMO</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="GpsRB">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>GPS</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="SubdeviceGroup">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>560</y>
+        <width>951</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select motherboard:</string>
+      </property>
+      <widget class="QRadioButton" name="A0RB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>A:0</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="A1RB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>A:1</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="AntennaGroup">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>440</y>
+        <width>951</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select antenna:</string>
+      </property>
+      <widget class="QRadioButton" name="RxtxRB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RX/TX</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Rx2RB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RX2</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="DataFormatGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>961</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select output data format:</string>
+      </property>
+      <widget class="QRadioButton" name="Int8RB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>int8</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Int16RB">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>int16</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="FloatRB">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>float (32 bit)</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="DoubleRB">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>20</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>double (64 bit)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="OffsetEdit">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>360</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="OffsetLabel">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>370</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carrier offset, Hz:</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="RecordDurationGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>961</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Select record duration:</string>
+      </property>
+      <widget class="QRadioButton" name="SecondsRB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>seconds:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="SamplesRB">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>20</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>samples:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="SecondsEdit">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>30</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="SamplesEdit">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>20</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>10000</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="FileNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>130</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter output file name:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="SamplesBufferLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>410</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Samples per buffer:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CarrierFreqEdit">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1575420000</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="FileNameEdit">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>120</y>
+        <width>481</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GPS_dd_mm_year_hh_mm_5MHz_1ch_int16_30s_bw2.5MHz_38dB_offs0MHz.dat</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SamplesBufferEdit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>400</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2944</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SetupTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>400</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="CarrierFreqLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carrier frequency, Hz:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="IpEdit">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>120</y>
+        <width>113</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>192.168.10.2</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="PresetsGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>961</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Presets:</string>
+      </property>
+      <widget class="QRadioButton" name="GpsL1CARB">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>GPS L1 CA</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Lte10RB">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>LTE 10 MHz</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="UmtsRB">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>UMTS</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="NbiotRB">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nb-IoT</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="Dvbt2RB">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>DVB-T2</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="FileNameButton">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>120</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fill from parameters</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="FilePathLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>File directory:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="FilePathEdit">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>160</y>
+        <width>811</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Programm path</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="FilePathButton">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>160</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="OptionsGroup">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>620</y>
+        <width>951</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Options</string>
+      </property>
+      <widget class="QCheckBox" name="ProgressCB">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>periodically display short-term sample rate estimation</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="StatsCB">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>show average bandwidth on exit</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="SkipLOCB">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>40</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>skip checking LO lock status</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="IntNCB">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>60</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>tune USRP with int-N tuning:</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="ContinueCB">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>20</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>don't abort on a bad packet</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="SizemapCB">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>track packet size and display breakdown on exit</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="NullCB">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>run without writing to file</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="IntNEdit">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>60</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="TabTransmitter">
+     <attribute name="title">
+      <string>Transmit samples from file</string>
+     </attribute>
+     <widget class="QLabel" name="MaintainceTLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/to be implemented.../</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="TabSpectrum">
+     <attribute name="title">
+      <string>Spectrum view</string>
+     </attribute>
+     <widget class="QLabel" name="MaintainceSLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/to be implemented.../</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1050</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ExitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>928</x>
+     <y>804</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>524</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
