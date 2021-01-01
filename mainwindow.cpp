@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDir>
 #include <QFileDialog>
+#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,6 +37,19 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::MakeRecord(){
     readParameters();
+    //rx_samples_to_file.exe --args addr="192.168.10.2" --file NbIoT_10_11_2020_18_19_10MHz_1chL1_int8_30s_bw5MHz_20dB_offs0MHz.dat --type char --duration 30 --spb 2944 --rate 10000000  --freq 780000000 --lo-offset 0 --wirefmt sc8 --gain 20 --ant RX2 --subdev A:0 --bw 5000000   --setup 2 --progress --stats
+    args = "--args addr=\"";
+    args += (ip_addr + "\" --file ");
+    args += (filepath + "\\" + filename + " --type ");
+    if (datafmt == ui->Int8RB->objectName())
+        args += ("char --duration ");
+    else if (datafmt == ui->Int16RB->objectName())
+        args += ("short --duration ");
+    else if (datafmt == ui->FloatRB->objectName())
+        args += ("float --duration ");
+    else if (datafmt == ui->DoubleRB->objectName())
+        args += ("double --duration ");
+    QProcess::startDetached("myexe", QStringList() << "any_argument");
 }
 
 void MainWindow::fillFromParams(){
