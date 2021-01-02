@@ -297,7 +297,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>38</string>
+       <string>30</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="SyncSourceGroup">
@@ -351,7 +351,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>MIMO</string>
+        <string>mimo</string>
        </property>
       </widget>
       <widget class="QRadioButton" name="GpsRB">
@@ -364,7 +364,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>GPS</string>
+        <string>gps</string>
        </property>
       </widget>
      </widget>
@@ -597,7 +597,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>30</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="SamplesEdit">
@@ -915,7 +915,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>tune USRP with int-N tuning:</string>
+        <string>tune USRP with int-N tuning</string>
        </property>
       </widget>
       <widget class="QCheckBox" name="ContinueCB">
@@ -957,17 +957,17 @@
         <string>run without writing to file</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="IntNEdit">
+      <widget class="QCheckBox" name="ShowParamsCB">
        <property name="geometry">
         <rect>
-         <x>560</x>
-         <y>60</y>
-         <width>51</width>
-         <height>21</height>
+         <x>370</x>
+         <y>80</y>
+         <width>341</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>show parameters on launch</string>
        </property>
       </widget>
      </widget>

@@ -25,12 +25,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QButtonGroup dataFormatG, wireFormatG, durationG, antennaG, sourceG, subdeviceG;
+    QButtonGroup dataFormatG, wireFormatG, durationG, antennaG, sourceG, subdeviceG, usrpTypeG;
     // variables to be set by po
-    QString ip_addr, filename, filepath, datafmt, ant, subdev, ref, wirefmt, args;
-    int channel, total_num_samps, spb, intN_num;
-    double rate, freq, gain, bw, total_time, setup_time, lo_offset;
-    bool bw_progress, stats, null, enable_size_map, cont_on_bad_packet, skiplo, intN;
+    QString ip_addr, filename, filepath, datafmt, ant, subdev, ref, wirefmt, args, usrpType;
+    QString channel, total_num_samps, spb;
+    QString rate, freq, gain, bw, total_time, setup_time, lo_offset;
+    bool bw_progress, stats, null_wr, enable_size_map, cont_on_bad_packet, skiplo, intN, showParams;
     void readParameters();
 };
 #endif // MAINWINDOW_H
