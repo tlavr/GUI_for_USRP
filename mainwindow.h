@@ -18,6 +18,12 @@ public slots:
     void hideItems();
     void showItems();
     void fillFromParams();
+    void setToolTips();
+    void setGPSParameters();
+    void setLTEParameters();
+    void setUMTSParameters();
+    void setNbIotParameters();
+    void setDVBParameters();
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -25,7 +31,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QButtonGroup dataFormatG, wireFormatG, durationG, antennaG, sourceG, subdeviceG, usrpTypeG;
+    QButtonGroup dataFormatG, wireFormatG, durationG, antennaG, sourceG, subdeviceG, usrpTypeG, presetsG;
     // variables to be set by po
     QString ip_addr, filename, filepath, datafmt, ant, subdev, ref, wirefmt, args, usrpType;
     QString channel, total_num_samps, spb;

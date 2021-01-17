@@ -22,6 +22,9 @@
     <height>850</height>
    </size>
   </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>USRP GUI v.0.2</string>
   </property>
@@ -31,6 +34,9 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
    </property>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -53,10 +59,16 @@
       <height>800</height>
      </size>
     </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
     <widget class="QWidget" name="TabReceiver">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
      <attribute name="title">
       <string>Receive samples to file</string>
      </attribute>
@@ -82,6 +94,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Channel:</string>
       </property>
@@ -95,6 +110,15 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
       <property name="text">
        <string>Make record</string>
       </property>
@@ -107,6 +131,9 @@
         <width>961</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Select USRP type:</string>
@@ -150,6 +177,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Signal bandwidth, Hz:</string>
       </property>
@@ -162,6 +192,9 @@
         <width>131</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Setup time, seconds:</string>
@@ -189,11 +222,14 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Gain, dB:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="SanpleRateLabel">
+     <widget class="QLabel" name="SampleRateLabel">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -201,6 +237,9 @@
         <width>101</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Sample rate, Hz:</string>
@@ -214,6 +253,9 @@
         <width>81</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Enter IP:</string>
@@ -240,6 +282,9 @@
         <width>961</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Select wire format:</string>
@@ -283,6 +328,9 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Exit</string>
       </property>
@@ -308,6 +356,9 @@
         <width>951</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Select synchronization reference source:</string>
@@ -377,6 +428,9 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="title">
        <string>Select motherboard:</string>
       </property>
@@ -419,6 +473,9 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="title">
        <string>Select antenna:</string>
       </property>
@@ -460,6 +517,9 @@
         <width>961</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Select output data format:</string>
@@ -542,6 +602,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Carrier offset, Hz:</string>
       </property>
@@ -554,6 +617,9 @@
         <width>961</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Select record duration:</string>
@@ -623,6 +689,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Enter output file name:</string>
       </property>
@@ -635,6 +704,9 @@
         <width>121</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Samples per buffer:</string>
@@ -701,6 +773,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Carrier frequency, Hz:</string>
       </property>
@@ -726,6 +801,21 @@
         <width>961</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="statusTip">
+       <string/>
+      </property>
+      <property name="whatsThis">
+       <string/>
       </property>
       <property name="title">
        <string>Presets:</string>
@@ -805,6 +895,9 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>Fill from parameters</string>
       </property>
@@ -817,6 +910,9 @@
         <width>141</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>File directory:</string>
@@ -844,6 +940,9 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>...</string>
       </property>
@@ -856,6 +955,9 @@
         <width>951</width>
         <height>111</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="title">
        <string>Options</string>
@@ -973,6 +1075,9 @@
      </widget>
     </widget>
     <widget class="QWidget" name="TabTransmitter">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
      <attribute name="title">
       <string>Transmit samples from file</string>
      </attribute>
@@ -985,12 +1090,18 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>/to be implemented.../</string>
       </property>
      </widget>
     </widget>
     <widget class="QWidget" name="TabSpectrum">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
      <attribute name="title">
       <string>Spectrum view</string>
      </attribute>
@@ -1002,6 +1113,9 @@
         <width>331</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>/to be implemented.../</string>

@@ -13,6 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    presetsG.addButton(ui->GpsL1CARB);
+    presetsG.addButton(ui->Lte10RB);
+    presetsG.addButton(ui->UmtsRB);
+    presetsG.addButton(ui->NbiotRB);
+    presetsG.addButton(ui->Dvbt2RB);
     usrpTypeG.addButton(ui->Usrp2RB);
     usrpTypeG.addButton(ui->UsrpB210RB);
     dataFormatG.addButton(ui->Int8RB);
@@ -38,12 +43,185 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->UsrpB210RB, &QPushButton::clicked, this, &MainWindow::hideItems);
     connect(ui->Usrp2RB, &QPushButton::clicked, this, &MainWindow::showItems);
     connect(ui->FileNameButton, &QPushButton::clicked, this, &MainWindow::fillFromParams);
+    connect(ui->GpsL1CARB, &QPushButton::clicked, this, &MainWindow::setGPSParameters);
+    connect(ui->Lte10RB, &QPushButton::clicked, this, &MainWindow::setLTEParameters);
+    connect(ui->UmtsRB, &QPushButton::clicked, this, &MainWindow::setUMTSParameters);
+    connect(ui->NbiotRB, &QPushButton::clicked, this, &MainWindow::setNbIotParameters);
+    connect(ui->Dvbt2RB, &QPushButton::clicked, this, &MainWindow::setDVBParameters);
+
+    this->setToolTips();
 }
 
+void MainWindow::setGPSParameters(){
+    //if (presetsG.checkedButton() == ui->GpsL1CARB){
+        ui->CarrierFreqEdit->setText("1575420000");
+        ui->Int16RB->setChecked(true);
+        ui->Sc16RB->setChecked(true);
+        ui->SecondsRB->setChecked(true);
+        ui->SecondsEdit->setText("20");
+        ui->OffsetEdit->setText("0");
+        ui->BandwidthEdit->setText("2500000");
+        ui->ChannelEdit->setText("0");
+        ui->SamplesBufferEdit->setText("2944");
+        ui->SampleRateEdit->setText("5000000");
+        ui->GainEdit->setText("35");
+        ui->SetupTimeEdit->setText("3");
+        this->readParameters();
+   // }
+}
+
+void MainWindow::setLTEParameters(){
+    ui->CarrierFreqEdit->setText("184400000");
+    ui->Int8RB->setChecked(true);
+    ui->Sc8RB->setChecked(true);
+    ui->SecondsRB->setChecked(true);
+    ui->SecondsEdit->setText("30");
+    ui->OffsetEdit->setText("0");
+    ui->BandwidthEdit->setText("10000000");
+    ui->ChannelEdit->setText("0");
+    ui->SamplesBufferEdit->setText("2944");
+    ui->SampleRateEdit->setText("20000000");
+    ui->GainEdit->setText("30");
+    ui->SetupTimeEdit->setText("3");
+    this->readParameters();
+}
+
+void MainWindow::setUMTSParameters(){
+    ui->CarrierFreqEdit->setText("219200000");
+    ui->Int8RB->setChecked(true);
+    ui->Sc8RB->setChecked(true);
+    ui->SecondsRB->setChecked(true);
+    ui->SecondsEdit->setText("30");
+    ui->OffsetEdit->setText("0");
+    ui->BandwidthEdit->setText("5000000");
+    ui->ChannelEdit->setText("0");
+    ui->SamplesBufferEdit->setText("2944");
+    ui->SampleRateEdit->setText("10000000");
+    ui->GainEdit->setText("30");
+    ui->SetupTimeEdit->setText("3");
+    this->readParameters();
+}
+
+void MainWindow::setNbIotParameters(){
+    ui->CarrierFreqEdit->setText("784000000");
+    ui->Int8RB->setChecked(true);
+    ui->Sc8RB->setChecked(true);
+    ui->SecondsRB->setChecked(true);
+    ui->SecondsEdit->setText("30");
+    ui->OffsetEdit->setText("0");
+    ui->BandwidthEdit->setText("10000000");
+    ui->ChannelEdit->setText("0");
+    ui->SamplesBufferEdit->setText("2944");
+    ui->SampleRateEdit->setText("20000000");
+    ui->GainEdit->setText("30");
+    ui->SetupTimeEdit->setText("3");
+    this->readParameters();
+}
+
+void MainWindow::setDVBParameters(){
+    ui->CarrierFreqEdit->setText("546000000");
+    ui->Int8RB->setChecked(true);
+    ui->Sc8RB->setChecked(true);
+    ui->SecondsRB->setChecked(true);
+    ui->SecondsEdit->setText("30");
+    ui->OffsetEdit->setText("0");
+    ui->BandwidthEdit->setText("10000000");
+    ui->ChannelEdit->setText("0");
+    ui->SamplesBufferEdit->setText("2944");
+    ui->SampleRateEdit->setText("20000000");
+    ui->GainEdit->setText("30");
+    ui->SetupTimeEdit->setText("3");
+    this->readParameters();
+}
+
+void MainWindow::setToolTips(){
+    int tipDuration = 10000;
+    ui->PresetsGroup->setToolTip("By choosing one of the presets you can change all the parameters according to the chosen system in one click.");
+    ui->PresetsGroup->setToolTipDuration(tipDuration);
+    ui->UsrpTypeGroup->setToolTip("Choose the right type of USRP device. It influences some internal functions and parameters configuration.");
+    ui->UsrpTypeGroup->setToolTipDuration(tipDuration);
+    ui->IpLabel->setToolTip("USRP type 2 series device IP address.");
+    ui->IpLabel->setToolTipDuration(tipDuration);
+    ui->IpEdit->setToolTip("USRP type 2 series device IP address.");
+    ui->IpEdit->setToolTipDuration(tipDuration);
+    ui->FileNameLabel->setToolTip("The name and the type of file containing the recorded signal.");
+    ui->FileNameLabel->setToolTipDuration(tipDuration);
+    ui->FileNameEdit->setToolTip("The name and the type of file containing the recorded signal.");
+    ui->FileNameEdit->setToolTipDuration(tipDuration);
+    ui->FileNameButton->setToolTip("Click to change output file name according to the parameters selected below and current system time.");
+    ui->FileNameButton->setToolTipDuration(tipDuration);
+    ui->FilePathLabel->setToolTip("Path to directory containing the output file (by default path is equal to programm path)");
+    ui->FilePathLabel->setToolTipDuration(tipDuration);
+    ui->FilePathEdit->setToolTip("Path to directory containing the output file (by default path is equal to programm path)");
+    ui->FilePathEdit->setToolTipDuration(tipDuration);
+    ui->FilePathButton->setToolTip("Click to choose the output file directory.");
+    ui->FilePathButton->setToolTipDuration(tipDuration);
+    ui->DataFormatGroup->setToolTip("Output data format is the way of IQ samples stored in file.");
+    ui->DataFormatGroup->setToolTipDuration(tipDuration);
+    ui->WireFormatGroup->setToolTip("Wire format is the way of samples transmission to the computer over-the-wire. 32 bits of information are "
+                                    "always transmited. For example, complex 8 bit means that there are two pair of 16 bit IQ samples are "
+                                    "transmited (Q8_1 I8_1 Q8_0 I8_0). For complex 16 bit only one pair is transmitted (Q16 I16). So if you "
+                                    "choose complex 8 bit format the maximum sampling rate could be 2 times greater.");
+    ui->WireFormatGroup->setToolTipDuration(tipDuration);
+    ui->RecordDurationGroup->setToolTip("Choose the constraint for signal recording: by time in seconds of by total amount of samples.");
+    ui->RecordDurationGroup->setToolTipDuration(tipDuration);
+    ui->CarrierFreqLabel->setToolTip("The central frequency of recorded signal. ");
+    ui->CarrierFreqLabel->setToolTipDuration(tipDuration);
+    ui->CarrierFreqEdit->setToolTip("The central frequency of recorded signal. ");
+    ui->CarrierFreqEdit->setToolTipDuration(tipDuration);
+    ui->OffsetLabel->setToolTip("Offset for frontend LO in Hz.");
+    ui->OffsetLabel->setToolTipDuration(tipDuration);
+    ui->OffsetEdit->setToolTip("Offset for frontend LO in Hz.");
+    ui->OffsetEdit->setToolTipDuration(tipDuration);
+    ui->BandwidthLabel->setToolTip("Analog frontend filter bandwidth in Hz.");
+    ui->BandwidthLabel->setToolTipDuration(tipDuration);
+    ui->BandwidthEdit->setToolTip("Analog frontend filter bandwidth in Hz.");
+    ui->BandwidthEdit->setToolTipDuration(tipDuration);
+    ui->ChannelLabel->setToolTip("USRP channel selection.");
+    ui->ChannelLabel->setToolTipDuration(tipDuration);
+    ui->ChannelEdit->setToolTip("USRP channel selection.");
+    ui->ChannelEdit->setToolTipDuration(tipDuration);
+    ui->SamplesBufferLabel->setToolTip("This parameter defines vector buffer size for sample storage. In this version two different threads"
+                                       "are used to store samples in vector and write them to file. Default value of MTU for data transmission is 1472."
+                                       "So it's recommended to select buffer size value equal to multiple of 1472. The greater this value the more"
+                                       "RAM memory is needed to store temporary samples.");
+    ui->SamplesBufferLabel->setToolTipDuration(tipDuration);
+    ui->SamplesBufferEdit->setToolTip("This parameter defines vector buffer size for sample storage. In this version two different threads"
+                                       "are used to store samples in vector and write them to file. Default value of MTU for data transmission is 1472."
+                                       "So it's recommended to select buffer size value equal to multiple of 1472. The greater this value the more"
+                                       "RAM memory is needed to store temporary samples.");
+    ui->SamplesBufferEdit->setToolTipDuration(tipDuration);
+    ui->SampleRateEdit->setToolTip("Rate of incoming samples.");
+    ui->SampleRateEdit->setToolTipDuration(tipDuration);
+    ui->SampleRateLabel->setToolTip("Rate of incoming samples.");
+    ui->SampleRateLabel->setToolTipDuration(tipDuration);
+    ui->GainLabel->setToolTip("Gain for the RF chain");
+    ui->GainLabel->setToolTipDuration(tipDuration);
+    ui->GainEdit->setToolTip("Gain for the RF chain");
+    ui->GainEdit->setToolTipDuration(tipDuration);
+    ui->SetupTimeLabel->setToolTip("USRP postpones the start of signal recording for the selected amount of seconds. It might be needed to let"
+                                   "all the transient processes to finish in RF elements ");
+    ui->SetupTimeLabel->setToolTipDuration(tipDuration);
+    ui->SetupTimeEdit->setToolTip("USRP postpones the start of signal recording for the selected amount of seconds. It might be needed to let"
+                                   "all the transient processes to finish in RF elements ");
+    ui->SetupTimeEdit->setToolTipDuration(tipDuration);
+    ui->AntennaGroup->setToolTip("Select one of the USRP antennas.");
+    ui->AntennaGroup->setToolTipDuration(tipDuration);
+    ui->SyncSourceGroup->setToolTip("Select the reference source of synchronization. ");
+    ui->SyncSourceGroup->setToolTipDuration(tipDuration);
+    ui->SubdeviceGroup->setToolTip("If there are more than one motherboards(for example with different firmware releases) you can "
+                                   "choose the one you need.");
+    ui->SubdeviceGroup->setToolTipDuration(tipDuration);
+    ui->OptionsGroup->setToolTip("Select optional parameters of signal recording programm.");
+    ui->OptionsGroup->setToolTipDuration(tipDuration);
+
+}
 void MainWindow::MakeRecord(){
     readParameters();
     if (usrpType == ui->Usrp2RB->objectName()){
-        //rx_samples_to_file.exe --args addr="192.168.10.2" --file NbIoT_10_11_2020_18_19_10MHz_1chL1_int8_30s_bw5MHz_20dB_offs0MHz.dat --type char --duration 30 --spb 2944 --rate 10000000 --freq 780000000 --lo-offset 0 --wirefmt sc8 --gain 20 --ant RX2 --subdev A:0 --bw 5000000   --setup 2 --progress --stats
+        //rx_samples_to_file.exe --args addr="192.168.10.2" --file NbIoT_10_11_2020_18_19_10MHz_1chL1_int8_30s_bw5MHz_20dB_offs0MHz.dat
+        //--type char --duration 30 --spb 2944 --rate 10000000 --freq 780000000 --lo-offset 0 --wirefmt sc8 --gain 20 --ant RX2
+        //--subdev A:0 --bw 5000000   --setup 2 --progress --stats
         args = " --args addr=";
         args += (ip_addr + " --file ");
         args += (filepath + "/" + filename + " --type ");
@@ -107,7 +285,7 @@ void MainWindow::MakeRecord(){
                 //                                           | FOREGROUND_INTENSITY;
             });
         sigRec->start(program, arguments);
-        sigRec->waitForReadyRead(1000);
+        sigRec->waitForReadyRead(5000);
         sigRec->close();
 
         /*isFinished = sigRec->waitForFinished();
